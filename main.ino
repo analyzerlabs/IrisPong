@@ -1,3 +1,11 @@
+/*  Software wrote for Arduino Mega by Analyzerlabs
+    version: 1.0
+    authon: Miguel Quispe
+    email: fisicomiguel@gmail.com / miguelquispecastro@uni.pe
+    telf:  +51 947166490
+
+                    Lima, November 2019
+*/
 #include <Servo.h>
 #include <LiquidCrystal.h>
 #include "move.cpp"
