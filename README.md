@@ -9,5 +9,5 @@ Software wrote for Arduino Mega by Analyzerlabs
 *    **email:** *[fisicomiguel@gmail.com]* / *[miguelquispecastro@uni.pe]*
 *    **telf:**  +51947166490
 
-##                    Lima, september 2019
+##                    Lima, November 2019
 
