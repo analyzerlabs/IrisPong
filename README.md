@@ -1,6 +1,6 @@
                 # IrisPong #
-/*  Software wrote for Arduino Mega by Analyzerlabs
-    version: 1.0
+/*  Software wrote for Arduino Mega by Analyzerlabs \n
+    version: 1.0 \n
     authon: Miguel Quispe
     email: fisicomiguel@gmail.com / miguelquispecastro@uni.pe
     telf:  +51 947166490
