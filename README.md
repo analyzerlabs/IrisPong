@@ -1,7 +1,10 @@
-                # IrisPong #
-#  Software wrote for Arduino Mega by Analyzerlabs 
+                # IrisPong 
+
+juego para lanzar una pelota sobre un agujero móvil en 1 dimesion
+
+#    Software wrote for Arduino Mega by Analyzerlabs 
 #    version: 1.0 \n
-#    authon: Miguel Quispe
+#    author: Miguel Quispe
 #    email: fisicomiguel@gmail.com / miguelquispecastro@uni.pe
 #    telf:  +51 947166490
 
