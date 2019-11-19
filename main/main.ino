@@ -8,7 +8,20 @@
 */
 #include <Servo.h>
 #include <LiquidCrystal.h>
-#include "move.cpp"
+#include <HCSR04.h>
+#include "move.h"
+
+byte corazon[8] =
+{
+0b00000,
+0b00000,
+0b01010,
+0b11111,
+0b11111,
+0b01110,
+0b00100,
+0b00000
+};
 
 void setup(){
     lcd.begin(16, 2);
