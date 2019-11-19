@@ -56,7 +56,7 @@ void game(){
    while((30-(millis()-t)/1000) > 0){    //bucle de inicio de juego pr 30 seg
       if(readSensor())pelotas++;
       wait(80);   //tiempor para lectura de pelotas adecuada
-      StepMotor()  // se mueve el motor 
+      StepMotor();  // se mueve el motor 
       if((millis()-t)>1000*n){           //condicion cada segundo de los 30 seg
          Serial.println(millis());
          n++;                            //retroalimenta la condicion
