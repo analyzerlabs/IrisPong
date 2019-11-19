@@ -9,19 +9,20 @@
 #include <Servo.h>
 #include <LiquidCrystal.h>
 #include <HCSR04.h>
+#include "variables.h"  //incluir las librerias en orden 
+#include "sensor.h"   // puesto que algunas variables que utilizan unas estan en otras
 #include "move.h"
-
-
+#include "lcd.h"
 
 void setup() {
-  LcdInit();
-  SensorInit();
+  Serial.begin(9600);
+  pinMode(interruptPin, INPUT);
+  lcdInit();
+  sensorInit(20); // Inicia la distancia de deteccion en cm
   menuInicio();
 }
-int distance=0;
+
 void loop() {
-  distance = distanceSensor.measureDistanceCm();
-  showDistance(distance);
-  if(distance < 15)StepMotor(1,1); //si la distncia qes menor a 15 entonces el motor se cuenta 1 pelota
-  else StepMotor(0,1);   
+  menuJuego();
+  game();
 }
