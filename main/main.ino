@@ -8,7 +8,7 @@
 */
 #include <Servo.h>
 #include <LiquidCrystal.h>
-#include <HCSR04.h>
+#include "SHCSR04.h"
 #include "variables.h"  //incluir las librerias en orden 
 #include "sensor.h"   // puesto que algunas variables que utilizan unas estan en otras
 #include "move.h"

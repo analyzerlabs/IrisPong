@@ -52,13 +52,12 @@ void game(){
    t=millis();
    int n = 0;
    boolean i=0;
-   int pelotas = 0;
+   pelotas=0;
    while((30-(millis()-t)/1000) > 0){    //bucle de inicio de juego pr 30 seg
-      if(readSensor())pelotas++;
-      wait(80);   //tiempor para lectura de pelotas adecuada
+      readSensor();
+      
       StepMotor();  // se mueve el motor 
-      if((millis()-t)>1000*n){           //condicion cada segundo de los 30 seg
-         Serial.println(millis());
+      if((millis()-t)>500*n){           //condicion cada segundo de los 30 seg
          n++;                            //retroalimenta la condicion
          unsigned long t_restante = 30 - (millis()-t)/1000;     //calcula el tiempo restante
          if(t_restante >= 10)lcd.setCursor(2,1);   //condifciones para imprimir numeros
@@ -95,7 +94,7 @@ void lcdInit(){
   lcd.begin(16, 2); //Inicializa la pantalla LCD 16x2 CARACTERES
   lcd.createChar(0, heart);
   lcd.createChar(1, R1);
-  lcd.createChar(2, R2);
+  lcd.createChar(2, happy);
   lcd.createChar(3, sad);
   lcd.createChar(4, pong1);
   lcd.createChar(5, pong2);

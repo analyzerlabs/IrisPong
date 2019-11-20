@@ -1,10 +1,14 @@
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
-UltraSonicDistanceSensor distanceSensor(8, 9);
+SHCSR04 hcsr04;
 const byte interruptPin = 19;
 boolean control = true;
 int distance=0;
+int anterior=0;
 unsigned long t=0;
+boolean flag = false;
+
+int pelotas = 0;
 byte heart[8] =
 {
 0b00000,
@@ -29,16 +33,16 @@ byte R1[8] =
 0b11111,
 };
 
-byte R2[8] =
+byte happy[8] =
 {
-0b01111,
-0b01111,
-0b01111,
-0b01111,
-0b01111,
-0b01111,
-0b01111,
-0b01111,
+0b00000,
+0b01010,
+0b01010,
+0b00000,
+0b00001,
+0b01110,
+0b00000,
+0b00000,
 };
 
 byte sad[8] =
