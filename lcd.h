@@ -1,26 +1,17 @@
-void showDistance(int d){
-  lcd.setCursor(0,0);
-  lcd.print("---Iris Pong----");
-  lcd.setCursor(0, 1);
-  lcd.println("D = ");
-  lcd.setCursor(4, 1);
-  lcd.println(d);
-  lcd.setCursor(9, 1);
-  lcd.println(" cm    ");
-
-}
-
-void menuInicio(){
+void menuInicio(){       //funcion para mostrar el menu de inicio
   lcd.setCursor(0,0);
   lcd.print("---Iris Pong----");  // mensaje de inicio
   for(int i=0 ; i<16;i++){     //carga de corazones en pantalla
-    lcd.setCursor(i,1);
+    lcd.setCursor(i,1);        
     lcd.write(byte(0));   
     delay(100);
   }
   delay(500);                 //espera 0.5 segundos
 }
 
+//  -----------------------------------------------------------------//
+ //  Creamos la funcion Menu para la pantalla LCD16X2
+ //  -----------------------------------------------------------------//
 void menuJuego(){
   boolean aux = digitalRead(19);   // lee el pin del boton
   while(control == true){          //si no se detecta cambio se queda en el while
@@ -31,24 +22,26 @@ void menuJuego(){
     lcd.print(" Iniciar Juego  ");
   }
 }
-
+//  -----------------------------------------------------------------//
+ //  Creamos la funcion Iniciar Juego para la pantalla LCD16X2
+ //  ----------------------------------------------------------------//
 void game(){
-   lcd.setCursor(0,0);
-   lcd.print("INICIANDO JUEGO ");
+   lcd.setCursor(0,0);                        //mueve el cursos a la columna 0 de la fila 0
+   lcd.print("INICIANDO JUEGO ");             //imprime "Iniciando Juego"
    lcd.setCursor(0,0);
    lcd.print("                ");
    wait(1500);
-   lcd.setCursor(0,1);
-   lcd.print("  PREPARADOS ?  ");
+   lcd.setCursor(0,1);                  //mueve el cursos a la columna 0 de la fila 1
+   lcd.print("  PREPARADOS ?  ");       // imprime PREPARADOS?
    wait(1000);
-   lcd.setCursor(0,1);
-   lcd.print("     LISTOS ?   ");
+   lcd.setCursor(0,1);                //mueve el cursos a la columna 0 de la fila 1
+   lcd.print("     LISTOS ?   ");     // imprime LISTOS?
    wait(1000);
-   lcd.setCursor(0,1);
-   lcd.print("     YA !!!!    ");
+   lcd.setCursor(0,1);                //mueve el cursos a la columna 0 de la fila 1
+   lcd.print("     YA !!!!    ");     // imprime YA!!!
    wait(500);
-   lcd.setCursor(0,1);
-   lcd.write(byte(7));   
+   lcd.setCursor(0,1);                //mueve el cursos a la columna 0 de la fila 1
+   lcd.write(byte(7));                //imprime el icono pelota
    t=millis();
    int n = 0;
    boolean i=0;
@@ -84,21 +77,24 @@ void game(){
    lcd.print("YOU LOSE");
    for(int i =0; i<16;i++){  
        lcd.setCursor(i,1);        
-       lcd.write(byte(3));
+       lcd.write(byte(3));   //imprime el icono cara triste
        delay(750); 
    }
    delay(2000);
    control = ! control;        //variable de control de juego para reiniciar
 }
+ //  -----------------------------------------------------------------//
+ //  Creamos la Funcion de Inicio de la Pantalla LCD 16X2
+ //  -----------------------------------------------------------------//
 void lcdInit(){
   lcd.begin(16, 2); //Inicializa la pantalla LCD 16x2 CARACTERES
-  lcd.createChar(0, heart);
+  lcd.createChar(0, heart);      //se genera el caracter corazon
   lcd.createChar(1, R1);
-  lcd.createChar(2, happy);
-  lcd.createChar(3, sad);
-  lcd.createChar(4, pong1);
-  lcd.createChar(5, pong2);
-  lcd.createChar(6, reloj1);
-  lcd.createChar(7, reloj2);
-  menuInicio();
+  lcd.createChar(2, happy);    //se genera el caracter carita feliz
+  lcd.createChar(3, sad);       //se genera el caracter carita triste
+  lcd.createChar(4, pong1);    //se genera el caracter pelota arriba
+  lcd.createChar(5, pong2);    //se genera el caracter pelota abajo
+  lcd.createChar(6, reloj1);    //se genera el caracter reloj de arena lleno
+  lcd.createChar(7, reloj2);    //se genera el caracter reloj de arena vacio
+  menuInicio();                 //se llama a la funcion menu inicio
 }
