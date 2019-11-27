@@ -7,7 +7,13 @@ int distance=0;      //variable para medir distancia
 int anterior=0;      //variable auxiliar de distancia
 unsigned long t=0;     //variable de tiempo
 boolean flag = false;   //variable bandera para el control del juego
+int calibrationPin= 7;
 
+int dirPin= 22;
+int stepPin = 24;
+
+boolean calibrationFlag = true;
+int maxTurns = 700;
 int pelotas = 0;    //variable de conteo de pelotas
 byte heart[8] =     //variable para generar el caracter Corazon
 {
@@ -33,7 +39,7 @@ byte R1[8] =
 0b11111,
 };
 
-byte happy[8] =   //variable para generar el caracter carita feliz
+byte happy[8] ={   //variable para generar el caracter carita feliz
 0b00000,
 0b01010,
 0b01010,

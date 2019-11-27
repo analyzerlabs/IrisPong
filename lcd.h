@@ -8,10 +8,10 @@ void menuInicio(){       //funcion para mostrar el menu de inicio
   }
   delay(500);                 //espera 0.5 segundos
 }
-
 //  -----------------------------------------------------------------//
- //  Creamos la funcion Menu para la pantalla LCD16X2
- //  -----------------------------------------------------------------//
+//  -------- Creamos la funcion Menu para la pantalla LCD16X2 --------
+//  -----------------------------------------------------------------//
+
 void menuJuego(){
   boolean aux = digitalRead(19);   // lee el pin del boton
   while(control == true){          //si no se detecta cambio se queda en el while
@@ -22,10 +22,13 @@ void menuJuego(){
     lcd.print(" Iniciar Juego  ");
   }
 }
+
 //  -----------------------------------------------------------------//
- //  Creamos la funcion Iniciar Juego para la pantalla LCD16X2
- //  ----------------------------------------------------------------//
+//  --- Creamos la funcion Iniciar Juego para la pantalla LCD16X2 ---//
+//  -----------------------------------------------------------------//
+
 void game(){
+  
    lcd.setCursor(0,0);                        //mueve el cursos a la columna 0 de la fila 0
    lcd.print("INICIANDO JUEGO ");             //imprime "Iniciando Juego"
    lcd.setCursor(0,0);
@@ -49,7 +52,7 @@ void game(){
    while((30-(millis()-t)/1000) > 0){    //bucle de inicio de juego pr 30 seg
       readSensor();
       
-      StepMotor();  // se mueve el motor 
+      //moveMotor();  // se mueve el motor 
       if((millis()-t)>500*n){           //condicion cada segundo de los 30 seg
          n++;                            //retroalimenta la condicion
          unsigned long t_restante = 30 - (millis()-t)/1000;     //calcula el tiempo restante
@@ -83,6 +86,7 @@ void game(){
    delay(2000);
    control = ! control;        //variable de control de juego para reiniciar
 }
+
  //  -----------------------------------------------------------------//
  //  Creamos la Funcion de Inicio de la Pantalla LCD 16X2
  //  -----------------------------------------------------------------//
@@ -97,4 +101,5 @@ void lcdInit(){
   lcd.createChar(6, reloj1);    //se genera el caracter reloj de arena lleno
   lcd.createChar(7, reloj2);    //se genera el caracter reloj de arena vacio
   menuInicio();                 //se llama a la funcion menu inicio
+
 }

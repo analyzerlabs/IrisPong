@@ -11,7 +11,8 @@
 #include "SHCSR04.h"    //incluimos la libreria del sensor HCSR04 aun no funciona
 #include "variables.h"  //incluimos las variables
 #include "sensor.h"   // incluimos las funcioones para el sensor aun on funciona
-#include "move.h"   //imcluimos las funciones para el movimiento aun no funciona
+#include "motor.h"   //imcluimos las funciones para el movimiento aun no funciona
+#include "calibracion.h"
 #include "lcd.h"   //incluimos las funciones generadas para la pantalla
 
 void setup() {
@@ -20,6 +21,10 @@ void setup() {
   lcdInit();                       // llamamos a la funicon lcdInit creado en el otro apartado
   sensorInit(20);                  // llamamos a la funcion sensorInit creado en el otro apartado
   menuInicio();         //llamamos a la funcion menuInicio creado en el otro apartado
+  maxTurns = 700;
+  motorInit();
+  calibratorInit();
+  calibrate();
 }
 
 void loop() {
