@@ -19,7 +19,8 @@ void setup() {
   Serial.begin(9600);      //iniciamos una conexcion serial para el debugeo
   pinMode(interruptPin, INPUT);   // asignamos al pin 19 como iterrupcion para el pulsador
   lcdInit();                       // llamamos a la funicon lcdInit creado en el otro apartado
-  sensorInit(20);                  // llamamos a la funcion sensorInit creado en el otro apartado
+  sensorInit(10);                  // llamamos a la funcion sensorInit creado en el otro apartado
+  irisInit();
   menuInicio();         //llamamos a la funcion menuInicio creado en el otro apartado
   maxTurns = 700;
   motorInit();

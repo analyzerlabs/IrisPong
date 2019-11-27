@@ -51,7 +51,6 @@ void game(){
    pelotas=0;
    while((30-(millis()-t)/1000) > 0){    //bucle de inicio de juego pr 30 seg
       readSensor();
-      
       //moveMotor();  // se mueve el motor 
       if((millis()-t)>500*n){           //condicion cada segundo de los 30 seg
          n++;                            //retroalimenta la condicion

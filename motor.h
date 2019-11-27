@@ -3,7 +3,14 @@ void motorInit(){
       pinMode(stepPin,OUTPUT);
       digitalWrite(stepPin,LOW);
   }
+void irisInit(){
+      iris.attach(7); 
+}
 
+void irisOpen(int angle){
+      iris.write(angle);
+      delay(1);
+  }
 // funcion para hacer funcionar al motor a paso en su
 // forma mas basica , speed representa el numero de pasos por segundo
 

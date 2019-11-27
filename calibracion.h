@@ -1,5 +1,6 @@
 void calibratorInit(){
     pinMode(calibrationPin,INPUT);
+    
   }
   
 void calibrate(){
@@ -8,9 +9,12 @@ void calibrate(){
     while(calibrationFlag == true){
           if(digitalRead(20)==false && aux == true)calibrationFlag = !calibrationFlag; //si hay cambio sale
           digitalWrite(stepPin,HIGH);
-          delay(1);
+          delay(5);
           digitalWrite(stepPin,LOW);
           delay(1);
+          angle-- ;
+          if(angle < 0)angle= 0;
+          irisOpen(angle);
           Serial.println("calibrando");
       }
   }
